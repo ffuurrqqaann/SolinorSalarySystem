@@ -6,16 +6,21 @@
 <head></head>
 <body>
 	<h1>File Upload.</h1>
-	<form action="${baseURL}/SolinorSalarySystem/uploadfile.html" method="POST"
-		enctype="multipart/form-data">
+	<form action="${baseURL}/SolinorSalarySystem/uploadfile.html"
+		method="POST" enctype="multipart/form-data">
 		<div class="form-group">
 			<label>File input</label> <input type="file" name="file" />
 		</div>
-		<br />
-		<br />
+		<br /> <br />
 		<div class="form-group">
 			<button type="submit" id="upload">Upload</button>
 		</div>
 	</form>
+
+	<!-- show error if any. -->
+	<c:if test="${not empty error}">
+		<h3>${error}</h3>
+	</c:if>
+
 </body>
 </html>

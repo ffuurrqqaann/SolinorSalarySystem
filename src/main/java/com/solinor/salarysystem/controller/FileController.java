@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -75,20 +76,29 @@ public class FileController {
 		
 		//empty file check
 		if (file.isEmpty()) {
-			model.put("msg", "failed to upload file because its empty");
-			return "mainpage";
+			model.put("error", "No File Choosen, Please go back and select a file to Upload.");
+			return "error";
 		}
 		
 		//root path of the csv file that is uploaded.
 		String rootPath = request.getSession().getServletContext().getRealPath("/");
-
+		
 		File dir = new File(rootPath + File.separator + "uploadedfile");
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
 
+		//file uploaded to the server.
 		File serverFile = new File(dir.getAbsolutePath() + File.separator + file.getOriginalFilename());
 		
+		//Getting file extension to check for csv file extension.
+		String ext = FilenameUtils.getExtension(serverFile.getPath());
+		
+		//if the extension is other than csv redirect to error page.
+		if(!ext.equals("csv")) {
+			model.put("error", "Only CSV file are allowed, Please go back and select a csv file to Upload.");
+			return "error";
+		}
 		
 		try {
 			InputStream is = file.getInputStream();
@@ -100,8 +110,8 @@ public class FileController {
 			}
 			stream.flush();
 		} catch (IOException e) {
-			model.put("msg", "failed to process file because : " + e.getMessage());
-			return "mainpage";
+			model.put("error", "Unable to process file because : " + e.getMessage());
+			return "error";
 		}
 
 		String[] nextLine;
@@ -158,8 +168,6 @@ public class FileController {
 
 		//inserting the bulk data as a batch to the database.
 		this.workingHourDao.insertBatch(workingHour);
-
-		model.put("msg", "success upload and process file");
 
 		return "salaryviewer";
 	}
