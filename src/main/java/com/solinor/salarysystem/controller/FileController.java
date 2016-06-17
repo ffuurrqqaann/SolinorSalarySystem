@@ -222,12 +222,13 @@ public class FileController {
 		double hourlyWage = Constants.HOURLY_WAGE;
 		int actualWorkingHour = 0;
 		
+		//if the working hours are greater than 8 hours calculate the 8 hours wage.
 		if( totalWorkingHours>8 ) {
 			int overtimeHours = totalWorkingHours - 8;
 			actualWorkingHour = totalWorkingHours - overtimeHours;
 
 			regularWage = actualWorkingHour * hourlyWage;
-		} else {
+		} else { //else calculate the normal hours working wage.
 			regularWage = totalWorkingHours * hourlyWage;
 		}
 
