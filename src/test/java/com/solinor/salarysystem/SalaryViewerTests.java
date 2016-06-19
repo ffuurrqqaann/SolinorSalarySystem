@@ -18,7 +18,8 @@ public class SalaryViewerTests  {
 		String endTime 		= "16:30";
 		
 		int totalWorkingHours 	= calculateTotalHoursWorked(startTime, endTime);
-		Double regularWage 		= calculateRegularDailyWage(totalWorkingHours);		
+		Double regularWage 		= calculateRegularDailyWage(totalWorkingHours);
+		
 		/*
 		 * Setting the wage to 30$ hours i.e., 3.75*8 = 30.
 		 * */
@@ -40,12 +41,6 @@ public class SalaryViewerTests  {
 		Assert.assertEquals("18.75", Double.toString(regularWage));
 	}
 	
-	/**
-	Returns the total number of hours worked by the employee.
-	@param String starttime, String endtime
-	@return int
-	@throws Exception e
-	*/
 	private int calculateTotalHoursWorked(String starttime, String endtime) {
 
 		int hours = 0;
@@ -235,8 +230,7 @@ public class SalaryViewerTests  {
 
 			//total calculated overtime hours.
 			int overtimeHours = totalWorkingHours - 8;
-			
-			
+					
 			/*
 			 * First 2 Hours>8Hours=HourlyWage+25%
 			 * Next 2 Hours = Hourly Wage + 50%
@@ -253,6 +247,4 @@ public class SalaryViewerTests  {
 
 		return overtimeAmount;
 	}
-
-
 }

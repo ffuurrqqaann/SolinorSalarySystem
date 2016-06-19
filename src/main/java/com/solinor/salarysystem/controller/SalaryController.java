@@ -116,6 +116,7 @@ public class SalaryController {
 	*/
 	private List<MonthlySalary> getSalaryBasedOnSearchParameter(String searchParam, List<MonthlySalary> monthlySalaryList) {
 		
+		//if the user search for the record.
 		if (null != searchParam && !searchParam.equals("")) {
 			List<MonthlySalary> salaryListForSearch = new ArrayList<MonthlySalary>();
 			

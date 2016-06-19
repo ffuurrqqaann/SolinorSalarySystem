@@ -200,7 +200,10 @@ public class FileController {
 			*/
 			if(hours<0) {
 				long previousDayHoursDifference = format.parse("24:00").getTime() - startdate.getTime() ;
+				
+				//converting ms to hours.
 				int previousDayHours = (int)((previousDayHoursDifference / (1000*60*60)) % 24);
+				
 				int nextDayHours = format.parse(endtime).getHours();
 				hours = previousDayHours + nextDayHours;
 			}
@@ -301,10 +304,14 @@ public class FileController {
 		
 				//if the hours enters into the midnight then calculate the prev and next day hours.
 				if(startEndHoursDifference<0) {
-					long previousDayHoursDifference = format.parse("24:00").getTime() - start.getTime() ;
+					long previousDayHoursDifference = format.parse("24:00").getTime() - start.getTime();
+					
+					//converting ms to hours.
 					int previousDayHours = (int)((previousDayHoursDifference / (1000*60*60)) % 24);
+					
 					int nextDayHours = end.getHours();
-
+					
+					//calculating evening compensation.
 					eveningCompensationAmount = (previousDayHours + nextDayHours) * Constants.EVENING_COMPENSATION_RATE;
 				} else {
 					int totalHours = (int) (((end.getTime() - start.getTime())/(1000*60*60))%24);

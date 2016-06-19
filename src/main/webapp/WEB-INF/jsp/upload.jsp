@@ -6,6 +6,8 @@
 <head></head>
 <body>
 	<h1>File Upload.</h1>
+	
+	<!-- file upload form -->
 	<form action="${baseURL}/SolinorSalarySystem/uploadfile.html"
 		method="POST" enctype="multipart/form-data">
 		<div class="form-group">

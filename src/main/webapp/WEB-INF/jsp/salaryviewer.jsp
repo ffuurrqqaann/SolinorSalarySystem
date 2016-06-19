@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Solinor Salary Viewer</title>
+
+<!-- stylesheet for css. -->
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 <script
@@ -62,6 +64,8 @@
 	src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"
 	src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+
+<!-- Javascript for Datatables. -->
 <script type="text/javascript">
 	//Plug-in to fetch page data 
 	jQuery.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings) {
@@ -99,15 +103,15 @@
 			},
 			"sAjaxSource" : "ajax/getMonthlySalaryRecords/",
 			"aoColumns" : [ {
-				"mData" : "id"
+				"mData" : "id"//id coloumn
 			}, {
-				"mData" : "name"
+				"mData" : "name" //name coloumn
 			}, {
-				"mData" : "evening_compensation"
+				"mData" : "evening_compensation" //evening compensation coloumn
 			}, {
-				"mData" : "overtime_compensation"
+				"mData" : "overtime_compensation" //overtime compensation coloumn
 			}, {
-				"mData" : "total_pay"
+				"mData" : "total_pay" //total pay coloumn
 			},
 
 			]
