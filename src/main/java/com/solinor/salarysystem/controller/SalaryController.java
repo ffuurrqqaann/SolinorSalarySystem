@@ -100,6 +100,7 @@ public class SalaryController {
     	//setting the data for the salary datatable
     	empSalaryJson.setAaData(monthlySalaryList);
     	
+    	//encoding the records to JSON.
     	Gson gson = new GsonBuilder().setPrettyPrinting().create();
     	String json = gson.toJson(empSalaryJson);
 		
@@ -124,9 +125,9 @@ public class SalaryController {
 			for (MonthlySalary salary : monthlySalaryList) {
 				
 				if( salary.getName().toUpperCase().indexOf(searchParam)!=-1 ||
-					Double.toString(salary.getEvening_compensation()).toUpperCase().indexOf(searchParam)!=-1 ||
-					Double.toString(salary.getOvertime_compensation()).toUpperCase().indexOf(searchParam)!=-1||
-					Double.toString(salary.getTotal_pay()).toUpperCase().indexOf(searchParam)!=-1 ) {
+					salary.getEvening_compensation().toUpperCase().indexOf(searchParam)!=-1 ||
+					salary.getOvertime_compensation().toUpperCase().indexOf(searchParam)!=-1||
+					salary.getTotal_pay().toUpperCase().indexOf(searchParam)!=-1 ) {
 					
 					//populating the list as per the search string.
 					salaryListForSearch.add(salary);

@@ -130,9 +130,9 @@ public class WorkingHourDaoImpl implements WorkingHourDao{
 				
 				monthlySalary.setId(rs.getInt("id"));
 				monthlySalary.setName(rs.getString("name"));
-				monthlySalary.setEvening_compensation(rs.getDouble("evening_compensation"));
-				monthlySalary.setOvertime_compensation(rs.getDouble("overtime_compensation"));
-				monthlySalary.setTotal_pay(rs.getDouble("total_pay"));
+				monthlySalary.setEvening_compensation("$"+Double.toString(rs.getDouble("evening_compensation")));
+				monthlySalary.setOvertime_compensation("$"+Double.toString(rs.getDouble("overtime_compensation")));
+				monthlySalary.setTotal_pay("$"+Double.toString(rs.getDouble("total_pay")));
 				
 				monthlySalaryList.add(monthlySalary);
 		      }

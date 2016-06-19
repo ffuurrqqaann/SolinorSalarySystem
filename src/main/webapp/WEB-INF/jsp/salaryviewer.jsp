@@ -125,7 +125,7 @@
 	<div class="container-fluid bg-2 text-center">
 		<h3>What Am I?</h3>
 		<p>This is a Solinor Salary Viewer that shows the Employee name,
-			total evening compensation and overtime compensation
+			total evening compensation and overtime compensation for March, 2014.
 		<div class="outer-container">
 			<div class="inner-container">
 				<div class="centered-content">

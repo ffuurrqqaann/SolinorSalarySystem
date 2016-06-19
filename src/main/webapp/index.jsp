@@ -40,8 +40,8 @@
 	<div class="container-fluid bg-2 text-center">
 		<h3>What Am I?</h3>
 		<p>Solinor Salary Viewer is a system that allow you to upload your
-			employees daily salary wages and compensation data in our system that
-			calculate the monthly pay for the employees along with their
+			employees daily check-in and check-out time in to the system that
+			calculates the monthly pay for the employees along with their
 			compensation i.e., overtime and evening compensations.</p>
 		<div style="float: none; margin-left: auto; margin-right: auto;">
 			<form action="${baseURL}/SolinorSalarySystem/uploadfile.html"
@@ -52,7 +52,7 @@
 
 					<!-- show error if any. -->
 					<c:if test="${not empty model.error}">
-						<h3>blablabla</h3>
+						<h3 class="errorblock">${error}</h3>
 					</c:if>
 				</div>
 			</form>

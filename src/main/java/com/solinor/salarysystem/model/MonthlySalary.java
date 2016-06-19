@@ -18,9 +18,9 @@ public class MonthlySalary {
 	
 	private String name;
 	
-	private double evening_compensation;
-	private double overtime_compensation;
-	private double total_pay;
+	private String evening_compensation;
+	private String overtime_compensation;
+	private String total_pay;
 	
 	/**
 	* The id of the employee.
@@ -51,10 +51,10 @@ public class MonthlySalary {
 	* @HasGetter
 	* @HasSetter
 	*/
-	public double getEvening_compensation() {
+	public String getEvening_compensation() {
 		return evening_compensation;
 	}
-	public void setEvening_compensation(double evening_compensation) {
+	public void setEvening_compensation(String evening_compensation) {
 		this.evening_compensation = evening_compensation;
 	}
 	
@@ -63,10 +63,10 @@ public class MonthlySalary {
 	* @HasGetter
 	* @HasSetter
 	*/
-	public double getOvertime_compensation() {
+	public String getOvertime_compensation() {
 		return overtime_compensation;
 	}
-	public void setOvertime_compensation(double overtime_compensation) {
+	public void setOvertime_compensation(String overtime_compensation) {
 		this.overtime_compensation = overtime_compensation;
 	}
 	
@@ -75,10 +75,10 @@ public class MonthlySalary {
 	* @HasGetter
 	* @HasSetter
 	*/
-	public double getTotal_pay() {
+	public String getTotal_pay() {
 		return total_pay;
 	}
-	public void setTotal_pay(double total_pay) {
+	public void setTotal_pay(String total_pay) {
 		this.total_pay = total_pay;
 	}	
 }

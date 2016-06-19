@@ -33,9 +33,9 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/solinor_salary_system" />
-		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="url" value="jdbc:mysql://127.3.230.130:3306/demo" />
+		<property name="username" value="adminEjM4gv6" />
+		<property name="password" value="3kA22ja25dl_" />
 	</bean>
 	
 	<bean id="WorkingHourDAO" class="com.solinor.salarysystem.dao.WorkingHourDaoImpl">
