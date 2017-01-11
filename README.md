@@ -1,5 +1,5 @@
 # SolinorSalarySystem
-This is a salary Calculation/Viewer software that has been build for Solinor Oy as my technical test.
+This is a salary Calculation/Viewer software.
 
 This demo take a csv file as an input, parse the employees daily salaries along with
 the compensation and store it to the database. The Salary Viewer then show the total
